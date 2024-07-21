@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THERANGA - Innovation en Thé Traditionnel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #e8f4f8;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #004d40;
+            color: #ffffff;
+            padding: 20px 0;
+            border-bottom: #80cbc4 3px solid;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        header img {
+            height: 60px;
+        }
+
+        header nav {
+            margin-top: 10px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #80cbc4;
+        }
+
+        #hero {
+            background: url('https://source.unsplash.com/1600x900/?tea') no-repeat center center/cover;
+            color: #ffffff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        #hero h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        .section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .section h2 {
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #004d40;
+        }
+
+        .section p {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        .product {
+            background: #ffffff;
+            padding: 30px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            text-align: left;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            float: left;
+            margin-right: 20px;
+            border-radius: 5px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .product h3 {
+            margin-bottom: 10px;
+            color: #004d40;
+        }
+
+        .product p {
+            color: #666;
+        }
+
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        #contact label {
+            margin: 10px 0 5px 0;
+            font-size: 1em;
+            color: #004d40;
+        }
+
+        #contact input,
+        #contact textarea {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        #contact button {
+            padding: 10px 20px;
+            background: #004d40;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s ease-in-out;
+        }
+
+        #contact button:hover {
+            background: #80cbc4;
+        }
+
+        .thank-you-message {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background-color: #dff0d8;
+            color: #3c763d;
+            border: 1px solid #d6e9c6;
+            border-radius: 5px;
+            margin-top: 20px;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        footer {
+            background: #004d40;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+
+        footer p {
+            font-size: 1em;
+        }
+
+        @media (max-width: 768px) {
+            header nav ul li {
+                display: block;
+                padding: 10px 0;
+            }
+
+            #hero h2 {
+                font-size: 2em;
+            }
+
+            .product img {
+                float: none;
+                display: block;
+                margin: auto;
+            }
+
+            .product {
+                text-align: center;
+            }
+        }
+
+        .product-category {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .product-category .product {
+            width: 45%;
+        }
+
+        @media (max-width: 768px) {
+            .product-category .product {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src=logo1.jpg alt="Logo THERANGA">
+            <h1>THERANGA</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#products">Produits</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2>Innovation en Thé Traditionnel ATAYA</h2>
+            <p>Captivons les sens et ravissons les papilles avec THERANGA</p>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>À propos de THERANGA</h2>
+            <p>THERANGA est une entreprise sénégalaise pionnière dans l'innovation de la transformation et commercialisation du thé traditionnel ATAYA en format capsule et infusion. Notre passion est de captiver les sens et de ravir les papilles tout en respectant les strates de goûts.</p>
+        </div>
+    </section>
+
+    <section id="products" class="section">
+        <div class="container">
+            <h2>Nos Produits</h2>
+            <div class="product-category">
+                <div class="product">
+                    <img src=leweul.jpg alt="Leweul">
+                    <h3>Leweul</h3>
+                    <p> Ce goût intense est destiné aux amateurs de thé qui préfèrent une 
+                        expérience riche et robuste. Le « Leweul » conserve la saveur traditionnelle forte du thé 
+                        sénégalais, offrant une profondeur de goût qui rappelle les méthodes de préparation 
+                        traditionnelles.</p>
+                </div>
+                <div class="product">
+                    <img src=deuxieme.jpg alt="Deuxieme">
+                    <h3>Deuxieme</h3>
+                    <p> Le deuxième, avec un gout moins intense, serait plus adaptés aux 
+                        personnes qui veulent découvrirent la vraie valeur du Thé Sénégalais. 
+                        Le deuxième apporte à la fois, un gout Intense et doux aux consommateurs et en plus c’est la 
+                        strate de gout le plus utilisés par les consommateurs d’après notre analyse de marché.  </p>
+                </div>
+                <div class="product">
+                    <img src=Tarxiss.jpg alt="Tarxiss">
+                    <h3>Tarxiss</h3>
+                    <p> Cette version plus douce convient aux consommateurs qui 
+                        favorisent un goût plus léger et moins intense. Le "Tarixiss" permet aux nouveaux venus 
+                        dans le monde du thé sénégalais de découvrir ses nuances sans être submergés par la robustesse 
+                        du goût.</p>
+                </div>
+                <div class="product">
+                    <img src=kheweul.jpg alt="Kheweul">
+                    <h3>Kheweul</h3>
+                    <p>Profitez de l'arôme vif et acidulé de notre thé au citron ATAYA, idéal pour toute occasion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contactez-nous</h2>
+            <form id="contactForm" action="contact.php" method="POST">
+                <label for="name">Nom:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+            <div id="thankYouMessage" class="thank-you-message">
+                Merci pour votre message ! Nous vous répondrons dès que possible.
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 THERANGA. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var formData = new FormData(this);
+
+            fetch('contact.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                if (data === 'success') {
+                    document.getElementById('thankYouMessage').style.display = 'block';
+                    this.reset();
+                } else {
+                    alert('Une erreur est survenue. Veuillez réessayer.');
+                }
+            })
+            .catch(error => {
+                alert('Une erreur est survenue. Veuillez réessayer.');
+            });
+        });
+    </script>
+</body>
+</html>
